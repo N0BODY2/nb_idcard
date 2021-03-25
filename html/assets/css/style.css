@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Secular One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Secular One'), local('SecularOne-Regular'), url(https://fonts.gstatic.com/s/secularone/v3/8QINdiTajsj_87rMuMdKyqDgOOhLLA.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+p {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  font-size: 12px;
+}
+#id-card {
+  position: relative;
+  display: none;
+  margin: 230px 50px 0 0;
+  float: right;
+  width: 457px;
+  height: 272px;
+  padding: 54px 17px 10px 144px;
+  background: url("../images/idcard.png");
+}
+img {
+  position: absolute;
+  left:7px;
+  top:5px;
+}
+#name {
+  font-weight: bolder;
+  font-size: 18px;
+  color: #ffffff;
+}
+#inline {
+  position: absolute;
+  top: 109px;
+}
+#dob {
+  position: absolute;
+  left: 0;
+  width: 100px;
+}
+#sex {
+  position: absolute;
+  left: 90px;
+}
+#height {
+  position: absolute;
+  left: 150px;
+  width: 60px;
+}
+#signature {
+  position: absolute;
+  bottom: 76px;
+  left: 152px;
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  text-transform:capitalize;
+  font-family: Secular One;
+}
+#licenses {
+  position: absolute;
+  top: 109px;
+  right: 33px;
+  width: 50px;
+}
