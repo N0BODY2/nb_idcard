@@ -9,14 +9,12 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- Open ID card
 RegisterNetEvent('idcard:open')
 AddEventHandler('idcard:open', function( data, type)
 	open = true
 	SendNUIMessage({ action = "open", array  = data, type   = type })
 end)
 
--- Key events
 Citizen.CreateThread(function()
 	while true do 
 		Wait(0)
@@ -64,11 +62,30 @@ function ShowMenu(type)
 		menu.close()
 		if type == 'idcard' then
 			TriggerServerEvent('idcard:open', GetPlayerServerId(PlayerId()), player)
+			animation()
 		else
 			TriggerServerEvent('idcard:open', GetPlayerServerId(PlayerId()), player, type)
+			animation()
 		end
 
 	end, function(data, menu)
 		menu.close()
 	end)
+end
+
+function animation()
+	local ped = PlayerPedId()
+	if not IsPedSittingInAnyVehicle(ped) then 
+	ClearPedSecondaryTask(ped)
+
+	RequestAnimDict("mp_common")
+	while (not HasAnimDictLoaded("mp_common")) do 
+		Citizen.Wait(10) 
+	end
+
+	TaskPlayAnim(ped,"mp_common","givetake1_a",100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
+	SetCurrentPedWeapon(ped, 0xA2719263)
+	Citizen.Wait(1500)
+	ClearPedSecondaryTask(ped) 
+  end
 end
