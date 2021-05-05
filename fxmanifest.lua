@@ -5,12 +5,18 @@ game 'gta5'
 ui_page 'html/index.html'
 
 server_script {
+	'@es_extended/locale.lua',
 	'@mysql-async/lib/MySQL.lua',
-	'server.lua'
+	'locales/*.lua',
+	'config.lua',
+	'server/*.lua'
 }
 
 client_script {
-	'client.lua'
+	'@es_extended/locale.lua',
+	'locales/*.lua',
+	'config.lua',
+	'client/*.lua'
 }
 
 files {

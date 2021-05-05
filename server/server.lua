@@ -38,7 +38,7 @@ AddEventHandler('idcard:open', function(ID, targetID, type)
 					}
 					TriggerClientEvent('idcard:open', _source, array, type)
 				else
-					TriggerClientEvent('esx:showNotification', _source, 'You dont have a license')
+					TriggerClientEvent('esx:showNotification', _source, _U('no_card'))
 				end
 			end)
 		end
