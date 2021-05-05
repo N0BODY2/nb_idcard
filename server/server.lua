@@ -38,7 +38,11 @@ AddEventHandler('idcard:open', function(ID, targetID, type)
 					}
 					TriggerClientEvent('idcard:open', _source, array, type)
 				else
+					if Config.ESXNotify then
 					TriggerClientEvent('esx:showNotification', _source, _U('no_card'))
+					else
+						TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'error', text = _U('no_card')})
+					end
 				end
 			end)
 		end
